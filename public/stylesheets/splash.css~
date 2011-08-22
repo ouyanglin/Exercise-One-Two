@@ -25,6 +25,7 @@ p {
 
 #form {
   text-align: center;
+  height: 100%;
 }
 
 .new_account {
