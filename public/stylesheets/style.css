@@ -1,0 +1,53 @@
+/*****************************************************************************
+RESET
+*****************************************************************************/
+html, body, address, blockquote, div, dl, form, h1, h2, h3, h4, h5, h6, ol, p, pre, table, ul, dd, dt, li, tbody, td, tfoot, th, thead, tr, button, del, ins, map, object, a, abbr, acronym, b, bdo, big, br, cite, code, dfn, em, i, img, kbd, q, samp, small, span, strong, sub, sup, tt, var, legend, fieldset {
+    margin: 0;
+    padding: 0;
+}
+img, fieldset {
+    border: 0;
+}
+img {
+    max-width: 98%;
+    height: auto;
+}
+.ie8 img {
+    width: auto;
+    height: auto;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { 
+    display:block;
+}
+/***************************************************************************
+CUSTOM
+***************************************************************************/
+
+body {
+  background: white url(/images/gradient.jpg) repeat-x top left;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.125 em;
+  color: #414141;
+}
+
+div, header {
+  overflow: auto;
+}
+
+footer {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#container {
+  margin: 0 auto;
+  width: 940px;
+  padding: 0 10px;
+  min-height: 600px;
+}
+
+#sign-in {
+  float: right;
+  margin-right: 75px;
+  margin-bottom: 85px;
+}
