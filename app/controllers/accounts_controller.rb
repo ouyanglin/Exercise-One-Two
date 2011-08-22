@@ -1,5 +1,6 @@
 class AccountsController < ApplicationController
-  def new
+  def create
+
   end
 
   def update

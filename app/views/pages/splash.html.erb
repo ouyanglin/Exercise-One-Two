@@ -22,6 +22,12 @@
       <%= image_tag("websites-reflection.png", :id => "reflection") %>
     </div>
     <p>Enter a Twitter handle and try it out!</p>
+    <div id="form">
+    <%= form_for @account do |f| %>
+      <%= f.text_field :screen_name %>
+      <input id="button" type="button" value="Go" />
+    <% end %>
+    </div>
     </div>
     <footer>
       <%= link_to "Join", '#'%> |
