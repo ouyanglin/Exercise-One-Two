@@ -1,2 +1,11 @@
-<h1>Pages#learn</h1>
-<p>Find me in app/views/pages/learn.html.erb</p>
+<div id="container">
+  <% logo = image_tag("home-logo.png", :id => "home-logo") %>
+  <%= link_to logo, root_path %>
+</div>
+<div id="main">
+  <%= image_tag("patagonia.jpg", :class => "main-image") %>
+  <br />
+  <p>One of the best ways to find things is through the people you follow. Twitter is excellent for this, and Exercise 2.1 enhances the experience by cataloging the links of the people you follow for easy recall. Search through past links by keywords, tags or date.</p>
+  <h1>Find something you like?</h1>
+  <p>Love it and create a remix of the web in your taste. Then check out the loved links of your friends to discover more!</p>
+</div>

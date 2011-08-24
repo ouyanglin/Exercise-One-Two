@@ -5,11 +5,15 @@ div.splash-main {
 
 #splash-left {
   float: left;
+  padding-left: 10px;
+  padding-top: 60px;
 }
 
 #splash-right {
   float: right;
   text-align: right;
+  padding-right: 10px;
+  padding-top: 60px;
 }
 
 #site-logo {
@@ -25,7 +29,7 @@ p {
 
 #form {
   text-align: center;
-  height: 100%;
+  overflow: hidden;
 }
 
 .new_account {

@@ -1,38 +1,26 @@
-<html>
-  <head>
-    <title>Exercise 2.1 | Welcome!</title>
-    <%= stylesheet_link_tag 'style', :media => 'screen' %>
-    <%= stylesheet_link_tag 'splash', :media => 'screen' %>
-  </head>
-  <body>
-    <div id="container">
-    <header>
-      <%= image_tag("sign-in-mouse-off.jpg", :alt => "Sign In",
-        :id => "sign-in") %>
-    </header>
-    <div id="splash-left" class="splash-main">
-      <%= image_tag("site-logo.png", :alt => "Exercise 2.1",
-        :id => "site-logo") %>
-      <br />
-      <%= image_tag("subtitle-text.png", 
-        :alt => "catalog the links of the people you follow to better discover the web",
-        :id => "subtitle-text") %>
-    </div>
-    <div id="splash-right" class="splash-main">
-      <%= image_tag("websites-reflection.png", :id => "reflection") %>
-    </div>
-    <p>Enter a Twitter handle and try it out!</p>
-    <div id="form">
+<% content_for :head do %>
+  <title>Exercise 2.1</title>
+  <%= stylesheet_link_tag 'splash', :media => 'screen' %>
+<% end %>
+
+<div id="container">
+  <div id="splash-left" class="splash-main">
+    <%= image_tag("site-logo.png", :alt => "Exercise 2.1",
+                                   :id => "site-logo") %>
+    <br />
+    <%= image_tag("subtitle-text.png", :alt => "catalog the links of the people 
+                                                you follow to better discover 
+                                                the web",
+                                       :id => "subtitle-text") %>
+  </div>
+  <div id="splash-right" class="splash-main">
+    <%= image_tag("websites-reflection.png", :id => "reflection") %>
+  </div>
+  <p>Enter a Twitter handle and try it out!</p>
+  <div id="form">
     <%= form_for @account do |f| %>
       <%= f.text_field :screen_name %>
       <input id="button" type="button" value="Go" />
     <% end %>
-    </div>
-    </div>
-    <footer>
-      <%= link_to "Join", '#'%> |
-      <%= link_to "Learn More", '#'%> |
-      <%= link_to "Make a Suggestion", '#'%>
-    </footer>
-  </body>
-</html>
+  </div>
+</div>

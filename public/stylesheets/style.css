@@ -9,7 +9,6 @@ img, fieldset {
     border: 0;
 }
 img {
-    max-width: 98%;
     height: auto;
 }
 .ie8 img {
@@ -26,28 +25,63 @@ CUSTOM
 body {
   background: white url(/images/gradient.jpg) repeat-x top left;
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.125 em;
+  font-size: 1.1em;
   color: #414141;
+}
+
+h1 {
+  color: #b70052;
+  font-size: 1.6em;
+  font-family: Helvetica, Arial, sans-serif;
+  padding-top: 14.4pt;
+  padding-bottom: 7.2pt;
 }
 
 div, header {
   overflow: auto;
 }
 
+header {
+  width: 960px;
+  margin: 0 auto;
+}
+
 footer {
   margin: 0 auto;
   text-align: center;
+  padding: 25px 0;
 }
 
 #container {
   margin: 0 auto;
-  width: 940px;
-  padding: 0 10px;
-  min-height: 600px;
+  width: 960px;
 }
 
 #sign-in {
   float: right;
   margin-right: 75px;
-  margin-bottom: 85px;
+  margin-bottom: 25px;
+}
+
+div#main {
+  background-color: rgba(255,255,255,.7);
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  filter: alpha(opacity=70); /* for IE 6&7 */
+  filter: "alpha(opacity=70)"; /* for IE 8 */
+  -webkit-box-shadow: 0 0 10px rgba(255,255,255,1);
+  -moz-box-shadow: 0 0 10px rgba(255,255,255,1);
+  box-shadow: 0 0 10px rgba(255,255,255,1);
+  min-height: 460px;
+  padding: 10px;
+  margin: 0 auto;
+  width: 940px;
+}
+
+#home-logo {
+}
+
+img.main-image {
+  display: block;
+  width: 940px;
 }
