@@ -1,26 +1,34 @@
 <% content_for :head do %>
-  <title>Exercise 2.1</title>
+  <title>Disclog</title>
   <%= stylesheet_link_tag 'splash', :media => 'screen' %>
 <% end %>
-
-<div id="container">
-  <div id="splash-left" class="splash-main">
-    <%= image_tag("site-logo.png", :alt => "Exercise 2.1",
-                                   :id => "site-logo") %>
-    <br />
-    <%= image_tag("subtitle-text.png", :alt => "catalog the links of the people 
-                                                you follow to better discover 
-                                                the web",
-                                       :id => "subtitle-text") %>
+<script>
+  $(document).ready(function(){
+    var mainHeight = $("body").height()-50;
+    $("section.main").height(mainHeight);
+  });
+</script>
+<section class="main">
+  <div class="main-left">
+    <div class="floater" id="floater_left"></div>
+    <div class="centered" id="centered_left">
+      <p><span id="disclog">Disclog</span> is a new way to explore the web</p>
+      <br />
+      <p>
+        Catalog the links of the people you <i>follow</i> to better discover 
+        the web
+      </p>
+    </div>
   </div>
-  <div id="splash-right" class="splash-main">
-    <%= image_tag("websites-reflection.png", :id => "reflection") %>
+  <div class="main-right">
+    <div class="floater" id="floater_right"></div>
+    <div class="centered" id="centered_right">
+      <p>Enter a Twitter handle and try it out!</p>
+      <br />
+      <%= form_for @account do |f| %>
+        <%= f.text_field :screen_name %>
+        <input id="button" type="button" value="Go" />
+      <% end %>
+    </div>
   </div>
-  <p>Enter a Twitter handle and try it out!</p>
-  <div id="form">
-    <%= form_for @account do |f| %>
-      <%= f.text_field :screen_name %>
-      <input id="button" type="button" value="Go" />
-    <% end %>
-  </div>
-</div>
+</section>  

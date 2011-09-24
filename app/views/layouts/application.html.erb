@@ -3,17 +3,28 @@
   <head>
     <%= yield :head %>
     <%= stylesheet_link_tag 'style', :media => 'screen' %>
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
   <body>
+    <script src="/javascripts/jquery-1.6.3.min.js">
+    </script>
     <header>
+      <%= image_tag("disclog-logo.jpg", :alt => "Disclog", :id => "logo") %>
       <%= image_tag("sign-in-mouse-off.jpg", :alt => "Sign In",
                                              :id => "sign-in") %>
     </header>
     <%= yield %>
     <footer>
-      <%= link_to "Join", '#'%> |
-      <%= link_to "Learn More", learn_path %> |
-      <%= link_to "Make a Suggestion", suggestion_path %>
+      <span class="copyright">Disclog (c)2011</span>
+      <nav>
+        <ul>
+          <li><%= link_to "Join", '#'%> |&nbsp;</li>
+          <li><%= link_to "Learn More", learn_path %> |&nbsp;</li>
+          <li><%= link_to "Make a Suggestion", suggestion_path %></li>
+        </ul>
+      </nav>
     </footer>
   </body>
 </html>
