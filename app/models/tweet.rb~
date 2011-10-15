@@ -1,0 +1,18 @@
+# == Schema Information
+#
+# Table name: tweets
+#
+#  id         :integer         not null, primary key
+#  link_id    :integer
+#  time       :datetime
+#  content    :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#  account_id :integer
+#
+
+class Tweet < ActiveRecord::Base
+  attr_accessible :time, :content
+
+  belongs_to :account
+end

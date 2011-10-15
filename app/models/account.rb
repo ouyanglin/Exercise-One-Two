@@ -10,18 +10,24 @@
 #  updated_at  :datetime
 #  location    :string(255)
 #  description :string(255)
+#
 
 require 'net/http'
 require 'json/ext'
 
 class Account < ActiveRecord::Base
-  attr_accessible :name, :screen_name, :location, :description
+  attr_accessible :screen_name
 
   validates :screen_name, :presence => true
   validate :screen_name_exists
-  before_save :get_info, :populate
+  before_save :get_info
+  after_save :populate
+
+  has_many :tweets
 
   USER_URI = "http://api.twitter.com/1/users/show.json?screen_name="
+  STATUS = "http://api.twitter.com/1/statuses/user_timeline.json?screen_name="
+  COUNT = 200
 
   private
 
@@ -44,6 +50,17 @@ class Account < ActiveRecord::Base
     end
 
     def populate
-      # Grab a decent amount of Tweets and look for and categorize the links
+      # grab 200 of the most recent tweets
+      uri = STATUS + screen_name + "&count=#{COUNT}"
+      res = Net::HTTP.get(URI.parse(uri))
+      data = JSON.parse(res)
+      # examine each tweet
+      data.map do |t|
+        # determine if there's a link. If yes, save it down. If no, move on
+        if t["text"] =~ /http:\/\//
+          params = { :content => t["text"], :time => t["created_at"] }
+          self.tweets.create(params)
+        end
+      end
     end
 end
