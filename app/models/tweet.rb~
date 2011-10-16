@@ -13,6 +13,14 @@
 
 class Tweet < ActiveRecord::Base
   attr_accessible :time, :content
-
+  before_save :add_link
   belongs_to :account
+
+  LINK_REG = /(http:\/\/[\w\.\/\?\&\=\+\%]+\b)/i
+
+  private
+
+    def add_link
+      LINK_REG.match(self.content)
+    end
 end

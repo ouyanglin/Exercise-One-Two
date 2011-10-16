@@ -22,5 +22,7 @@ class Tweet < ActiveRecord::Base
 
     def add_link
       LINK_REG.match(self.content)
+      link = Link.create(:url => $1)
+      self.link_id = link.id
     end
 end
