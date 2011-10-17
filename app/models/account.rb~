@@ -59,7 +59,7 @@ class Account < ActiveRecord::Base
         # determine if there's a link. If yes, save it down. If no, move on
         if t["text"] =~ /http:\/\//
           params = { :content => t["text"], :time => t["created_at"] }
-          self.tweets.create(params)
+          self.tweets.create!(params)
         end
       end
     end
